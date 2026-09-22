@@ -188,7 +188,7 @@ This project was developed as part of a Technical Course Final Project (TCC), br
 
 **João Guilherme de Oliveira Miranda**
 
-GitHub: [@joaoguilhermeomiranda-sketch](https://github.com/jguilhermemiranda)
+GitHub: [@joaoguilhermeomiranda](https://github.com/jguilhermemiranda)
 
 ## License
 
