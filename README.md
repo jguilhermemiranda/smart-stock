@@ -194,9 +194,14 @@ This project was developed as part of a Technical Course Final Project (TCC), br
 - Microcontroller programming
 - Motor control
 
-## Author
+## Authors
 
-**João Guilherme de Oliveira Miranda**
+- Gabriel Curti da Silva Moura Diniz
+- Hugo de Paula Martins
+- João Guilherme de Oliveira Miranda
+- Pedro Lucas Vieira Monteiro Vicente
+
+GitHub: [@pedrolucashub (Pedro Lucas)](https://github.com/pedrolucashub)
 
 GitHub: [@joaoguilhermeomiranda](https://github.com/jguilhermemiranda)
 
