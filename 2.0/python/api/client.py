@@ -23,6 +23,15 @@ class DeviceClient:
 
     def health(self) -> dict: return self.request("GET", "/health")
     def status(self) -> dict: return self.request("GET", "/status")
+    def config(self) -> dict: return self.request("GET", "/config")
+    def wifi_scan(self) -> dict: return self.request("GET", "/wifi/scan")
+    def configure_network(self, ssid: str, password: str, bridge_host: str, bridge_port: int) -> dict:
+        return self.request(
+            "POST",
+            "/config/network",
+            {"ssid": ssid, "password": password, "bridge_host": bridge_host, "bridge_port": bridge_port},
+        )
+    def configure_machine(self, payload: dict) -> dict: return self.request("POST", "/config/machine", {"machine_config": payload})
     def sync(self, payload: dict) -> dict: return self.request("POST", "/sync", payload)
     def move(self, drawer_id: int) -> dict: return self.request("POST", "/move", {"drawer_id": drawer_id})
     def home(self) -> dict: return self.request("POST", "/home", {})

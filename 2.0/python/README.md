@@ -17,9 +17,12 @@ The application creates local files such as `smartstock.db` and `smartstock.json
 1. Register drawers with real coordinates. The UI marks a drawer as calibrated only when X/Y/Z values are filled in.
 2. Register items and quantities in each drawer. Reusing the same item updates the value instead of creating duplicates.
 3. Register RFID cards using a hexadecimal UID. The UID is normalized to uppercase.
+	Extra owner fields can be entered as `matricula=123; cpf=000.000.000-00`.
 4. Associate cards with drawers in the "Who can withdraw" section to display authorized owners.
-5. Configure `esp32_host` and `esp32_port` in `smartstock.json` when mDNS is not resolving correctly.
-6. Synchronize the data to send machine configuration, drawers, inventory, cards, permissions, and the SHA-256 value to the ESP32.
+5. Use "Autorizar / desautorizar selecionado" to revoke or reactivate a card. Revoked cards cannot access the ESP.
+6. Use "Puxar dados do ESP" to replace the local database with the controller's stored database.
+7. Configure `esp32_host` and `esp32_port` in `smartstock.json` when mDNS is not resolving correctly.
+8. Synchronize the data to send machine configuration, drawers, inventory, cards, permissions, and the SHA-256 value to the ESP32.
 7. Use HOME and administrative moves only after explicit confirmation.
 
 ## Firmware modules

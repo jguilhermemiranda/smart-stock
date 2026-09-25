@@ -2,6 +2,8 @@
 
 Aplicativo desktop para Windows desenvolvido em Python com Tkinter, usando um banco SQLite local para registrar operação, gavetas, cartões RFID e inventário.
 
+Para habilitar a integração com Excel, instale as dependências com `python -m pip install -r .\2.0\python\requirements.txt`.
+
 ## Como executar
 
 No diretório raiz do projeto:
@@ -17,10 +19,15 @@ A aplicação cria arquivos locais como `smartstock.db` e `smartstock.json` no d
 1. Cadastre gavetas com coordenadas reais. A interface marca a gaveta como calibrada apenas quando os valores X/Y/Z forem preenchidos.
 2. Cadastre itens e quantidades em cada gaveta. Reusar o mesmo item atualiza o valor em vez de criar duplicata.
 3. Cadastre cartões RFID com UID hexadecimal. O UID é normalizado para maiúsculas.
+	No campo de atributos extras, informe campos livres no formato `matricula=123; cpf=000.000.000-00`.
 4. Associe cartões às gavetas na seção "Quem pode retirar" para exibir os proprietários autorizados.
-5. Configure `esp32_host` e `esp32_port` em `smartstock.json` quando o mDNS não resolver corretamente.
-6. Sincronize os dados para enviar configuração da máquina, gavetas, inventário, cartões, permissões e o valor SHA-256 ao ESP32.
-7. Use HOME e movimentos administrativos somente após confirmação explícita.
+5. Use "Autorizar / desautorizar selecionado" para revogar ou reativar um cartão. Cartões revogados não liberam acesso no ESP.
+6. Use "Puxar dados do ESP" para substituir o banco local pelo banco armazenado no controlador.
+7. Configure `esp32_host` e `esp32_port` em `smartstock.json` quando o mDNS não resolver corretamente.
+8. Sincronize os dados para enviar configuração da máquina, gavetas, inventário, cartões, permissões e o valor SHA-256 ao ESP32.
+9. Use "Exportar Excel" para gerar uma planilha com as abas Cards, Drawers, Inventory e Permissions.
+10. Use "Importar Excel" para substituir o banco local a partir de uma planilha exportada pelo aplicativo.
+11. Use HOME e movimentos administrativos somente após confirmação explícita.
 
 ## Módulos de firmware
 

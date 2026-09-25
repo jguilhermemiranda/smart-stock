@@ -176,6 +176,20 @@ O firmware do Arduino deve ser compilado para a placa específica utilizada no p
 
 Os três controladores devem ser configurados de acordo com o hardware e a comunicação do sistema.
 
+### Primeira configuracao do ESP32
+
+Grave o firmware atualizado no ESP32. A configuração pode ser concluída pela janela do computador, sem usar o Monitor Serial.
+
+Quando o ESP32 ainda nao possui credenciais Wi-Fi validas, ele cria uma rede temporaria:
+
+- Rede: `SmartStock-Config`
+- Senha: `smartstock`
+- Endereco: `http://192.168.4.1`
+
+Conecte o computador a essa rede e abra o endereco no navegador. Preencha a rede Wi-Fi principal e os dados do ESP-01. Ao salvar, o ESP32 reinicia e tenta entrar na rede configurada. Depois, reconecte o computador a rede normal e use `http://smartstock.local` ou o IP atribuido pelo roteador.
+
+Se a rede nao aparecer, pressione o botao EN/RST do ESP32, aguarde ate 15 segundos e procure novamente por `SmartStock-Config`.
+
 ## Desenvolvimento
 
 O projeto continua em evolução. Os materiais legados foram preservados na pasta `ORIGINAL/`, enquanto a arquitetura atual está em `2.0/`.
